@@ -3,12 +3,23 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import NavigationMenu from './Components/NavigationMenu';
 
 function App() {
-  
+
 
   return (
-    <div></div>
+    <div>
+      <header>
+        <NavigationMenu />
+      </header>
+      <main>
+
+      </main>
+      <footer>
+
+      </footer>
+    </div>
   )
 }
 
