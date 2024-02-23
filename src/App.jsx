@@ -1,29 +1,28 @@
 import './App.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import NavigationMenu from './Components/NavigationMenu';
-import Footer from './Components/Footer';
 import HomePage from './Components/HomePage';
+import ErrorPage from './Components/ErrorPage';
+import Layout from './Components/Layout';
 
+import { Routes, Route } from "react-router-dom";
+import Projects from './Components/Projects';
+import GameProjects from './Components/GameProjects';
+import Contact from './Components/Contact';
 
 function App() {
 
 
   return (
-    <div>
-      <header>
-        <NavigationMenu />
-      </header>
-      <main>
-        <HomePage />
-      </main>
-
-      <Footer />
-      
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path='gameprojects' element={<GameProjects />} />
+        <Route path="projects" element={<Contact />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Route>
+    </Routes>
   )
 }
-
+{/*  */}
 export default App
